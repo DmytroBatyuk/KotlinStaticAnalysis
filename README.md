@@ -79,7 +79,9 @@ subprojects {
 There are two ways to do that:
 
 From Android Strudio
+
 ![android studio start](https://github.com/DmytroBatyuk/KotlinStaticAnalysis/blob/master/img/Screenshot%202020-08-06%20at%2022.46.40.png)
+
 
 From comand line
 ```
