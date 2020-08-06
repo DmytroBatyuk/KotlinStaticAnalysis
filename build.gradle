@@ -14,6 +14,18 @@ buildscript {
     }
 }
 
+        }
+    }
+}
+
+
+/*
+    Ktlint integration into detekt when analyse over the project.
+*/
+//dependencies {
+//    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.11.0-RC1"
+//}
+
 allprojects {
     repositories {
         google()
