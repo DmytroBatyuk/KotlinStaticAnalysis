@@ -14,6 +14,44 @@ buildscript {
     }
 }
 
+
+plugins {
+    id("io.gitlab.arturbosch.detekt").version("1.11.0-RC1")
+}
+
+repositories {
+    jcenter()
+}
+
+
+/*
+    Analyses code separately by modules.
+    Stops when failed on any module.
+    Report into module build folder (default path).
+*/
+//subprojects {
+//    apply plugin: "io.gitlab.arturbosch.detekt"
+//
+//    detekt {
+//        config = files("${project.rootDir}/config/detekt.yml")
+//        parallel = true
+//    }
+//}
+
+
+/*
+    Analyses over the project and group results into one report.
+    Finish analysis even if reached max number of issues.
+*/
+detekt {
+    input = files(rootProject.rootDir)
+    config = files("config/detekt.yml")
+    buildUponDefaultConfig = true
+
+    reports {
+        html {
+            enabled = true
+            destination = file("reports/report.html")
         }
     }
 }
